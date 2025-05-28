@@ -109,7 +109,7 @@
       <RegistrySearch Id="Local" Root="HKLM" Key="[%agent_regpath%]" Name="local" Type="raw"/>
     </Property>
     <SetProperty Id="CMDLINE_LOCAL"   Before="AppSearch" Value="[LOCAL]" />
-    <!-- Also compare to INSTALLDIR to fix wrongly set LOCAL in 1.7.2 -->
+     
     <SetProperty Id="LOCAL"           After="AppSearch"  Value="[CMDLINE_LOCAL]"><![CDATA[CMDLINE_LOCAL<>"" OR LOCAL=INSTALLDIR OR CMDLINE_CONFIG="reset"]]></SetProperty>
     <SetDirectory Id="_LOCALDIR"      Before="CostFinalize" Value="[LOCAL]" />
 

@@ -4,7 +4,7 @@
   <!-- see https://iirf.svn.codeplex.com/svn/v2.x/Setup/CustomText.wxl -->
 
   <String Id="WelcomeDlg_Title">[ProductName] Setup</String>
-  <String Id="WelcomeDlgTitle">{\WixUI_Font_Bigger}Welcome to the Setup Wizard for&#13;&#10;[ProductName]</String>
+  <String Id="WelcomeDlgTitle">{\WixUI_Font_Bigger}Welcome to the Setup Wizard for SNDESK Agent</String>
 
   <!-- custom text on welcome dialog -->
 [%- IF msi_debug==0 && ! agent_vertag %]
@@ -18,11 +18,11 @@
 [%- END %]
 
   <String Id="PrepareDlg_Title">[ProductName] Setup</String>
-  <String Id="PrepareDlgTitle">{\WixUI_Font_Bigger}Welcome to the Setup Wizard for&#13;&#10;[ProductName]</String>
+  <String Id="PrepareDlgTitle">{\WixUI_Font_Bigger}Welcome to the Setup Wizard for SNDESK Agent </String>
 
   <!-- custom text on features dialog -->
-  <String Id="ProductTitle">GLPI Agent</String>
-  <String Id="ProductDescription">GLPI Agent core including Inventory task.</String>
+  <String Id="ProductTitle">SNDESK Agent</String>
+  <String Id="ProductDescription">SNDESK Agent core including Inventory task.</String>
   <String Id="NetInventory">Netinventory and NetDiscovery support</String>
   <String Id="NetInventoryDescription">All the necessary files to run network discovery and inventory tasks.</String>
   <String Id="Deploy">Deploy support</String>
@@ -36,7 +36,7 @@
 
   <!-- custom text for service registration -->
   <String Id="ServiceDisplayName">[%agent_fullname%]</String>
-  <String Id="ServiceDescription">[%agent_fullname%] is an inventory agent. It is intended to upload system inventory toward a GLPI server on a regular basis.</String>
+  <String Id="ServiceDescription">[%agent_fullname%] is an inventory agent. It is intended to upload system inventory toward a SNDESK server on a regular basis.</String>
 
   <!-- custom text for target setup dialog -->
   <String Id="TargetSetupDlg_Title">[ProductName] Target Setup</String>
@@ -88,7 +88,7 @@
   <String Id="RunNow">Run inventory immediatly after installation</String>
   <String Id="Lazy">Respect the frequency of inventories specified by the server (recommended)</String>
   <String Id="LazyToolTip">Lazy option</String>
-  <String Id="InstallAgentMonitor">Install GLPI-AgentMonitor as systray icon for all users</String>
+  <String Id="InstallAgentMonitor">Install SNDESK-AgentMonitor as systray icon for all users</String>
 
   <!-- custom text for windows task mode setup dialog -->
   <String Id="TaskModeDlgTitle">[ProductName] Setup</String>
@@ -186,10 +186,10 @@
   <String Id="SetupTypeDlgTypicalText">Installs the most common program features with only Inventory and RemoteInventory tasks support.</String>
   <String Id="SetupTypeDlgCompleteText">All program features will be installed.</String>
   <String Id="ProgressDlgTitleInstalling">{\WixUI_Font_Title}Installing [ProductName]</String>
-  <String Id="RunningAgent">Running GLPI Agent, this may take a while...</String>
+  <String Id="RunningAgent">Running SNDESK Agent, this may take a while...</String>
 
   <!-- texts related to firewall exceptions -->
-  <String Id="FirewallExceptionName">GLPI Agent</String>
-  <String Id="FirewallExceptionDescription">GLPI Agent embedded HTTP server incoming traffic</String>
-  <String Id="OutgoingFirewallExceptionDescription">GLPI Agent outgoing traffic</String>
+  <String Id="FirewallExceptionName">SNDESK Agent</String>
+  <String Id="FirewallExceptionDescription">SNDESK Agent embedded HTTP server incoming traffic</String>
+  <String Id="OutgoingFirewallExceptionDescription">SNDESK Agent outgoing traffic</String>
 </WixLocalization>

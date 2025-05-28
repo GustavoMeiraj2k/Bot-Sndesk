@@ -4,7 +4,7 @@
   <description>GLPI Agent GPO configuration</description>
   <resources>
     <stringTable>
-      <string id="GLPI_ROOT">GLPI Agent</string>
+      <string id="GLPI_ROOT">SNDESK Agent</string>
       <string id="GLPI_CONFIGURE32on64">Configure the 32-bit agent on 64 bit computers</string>
       <string id="GLPI_CONFIGURE">Configure the agent</string>
       <string id="GLPI_CONFIGURE_EXPLAIN">Specify the paramaters for GLPI Agent.</string>

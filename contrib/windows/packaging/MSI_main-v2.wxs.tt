@@ -11,7 +11,7 @@
              Languages='1033' SummaryCodepage="1252" Comments="$(var.PkgComments)"
              InstallerVersion='200' Compressed='yes' InstallPrivileges='elevated' InstallScope="perMachine" />
 
-    <Media Id='1' Cabinet='GLPIAgent.cab' CompressionLevel='high' EmbedCab='yes' />
+    <Media Id='1' Cabinet='SNDESKAgent.cab' CompressionLevel='high' EmbedCab='yes' />
 
     <Property Id="ARPCOMMENTS" Value="$(var.ProductName)" />
     <Property Id="ARPCONTACT" Value="$(var.Manufacturer)" />

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Include>
-  <?define AgentName         = "[%agent_fullname%]" ?>   <!-- e.g. "GLPI Agent" -->
+  <?define AgentName         = "[%agent_fullname%]" ?>   <!-- e.g. "SNDESK Agent" -->
 [%- IF ! agent_vertag %]
-  <?define ProductName       = "[%agent_fullname%] [%agent_vernum%]" ?>   <!-- e.g. "GLPI Agent 1.0" -->
+  <?define ProductName       = "[%agent_fullname%] [%agent_vernum%]" ?>   <!-- e.g. "SNDESK Agent 1.0" -->
 [%- ELSE %]
-  <?define ProductName       = "[%agent_fullname%] [%agent_vernum%] ([%agent_vertag%])" ?>   <!-- e.g. "GLPI Agent 1.0 (beta2)" -->
+  <?define ProductName       = "[%agent_fullname%] [%agent_vernum%] ([%agent_vertag%])" ?>   <!-- e.g. "SNDESK Agent 1.0 (beta2)" -->
 [%- END %]
   <?define UpgradeCode       = "[%msi_upgrade_code%]" ?> <!-- e.g. "0DEF72A8-E5EE-4116-97DC-753718E19CD5" -->
   <?define ProductGUID       = "[%msi_product_guid%]" ?> <!-- e.g. "444492A0-D47C-4290-BAF7-8113318CD031" -->
@@ -14,7 +14,7 @@
   <?define Manufacturer      = "[%app_publisher%]" ?>       <!-- e.g. "Teclib'" -->
   <?define URLAbout          = "[%url_about%]" ?>           <!-- e.g. "https://glpi-project.org/" -->
   <?define URLHelp           = "[%url_help%]" ?>            <!-- e.g. "https://glpi-project.org/discussions/" -->
-  <?define RootDir           = "[%agent_rootdir%]" ?>       <!-- e.g. "GLPI-Agent" -->
+  <?define RootDir           = "[%agent_rootdir%]" ?>       <!-- e.g. "SNDESK-Agent" -->
   <?define LocalDirGuid      = "[%agent_localguid%]" ?>
 
   <?define FileMainIcon      = "[%msi_main_icon%]" ?>

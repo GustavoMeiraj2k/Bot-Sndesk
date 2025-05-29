@@ -56,7 +56,7 @@ fi
 
 [ -d var ] || mkdir var
 if [ ! -d etc ]; then
-    echo "Setup glpi-agent..."
+    echo "Setup SDNESK-agent..."
     if [ "$(id -u)" -ne "0" ]; then
         echo "Can't copy etc folder from AppImage, run $0 as root" >&2
         exit 1
@@ -124,4 +124,4 @@ else
 fi
 PERL
 chmod +x perl
-echo "Glpi Agent linux portable is ready"
+echo "SDNESK Agent linux portable is ready"

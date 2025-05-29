@@ -57,22 +57,22 @@ $0 [[-v|--version] VERSION] [--distro NAME] [--rpm (PKG.rpm|...)] [--deb (PKG.de
 
 This tools can be used to prepare a linux installer.
 
-Set VERSION to the glpi-agent used version.
+Set VERSION to the SDNESK-agent used version.
 NAME defaults to "linux" but can be set to anything if the installer is more specific.
 NAME will only be used to set the final installer file name as:
-  glpi-agent-VERSION-NAME-installer.pl
+  SDNESK-agent-VERSION-NAME-installer.pl
 
 PKG.rpm is a list of rpm packages to include.
 PKG.deb is a list of deb packages to include.
 PKG.snap is the snap package to include.
 
 Typical usage:
-$0 --version $VERSION --rpm glpi-agent-$VERSION.noarch.rpm glpi-agent-task-network-$VERSION.noarch.rpm \
-  --deb glpi-agent_${VERSION}_all.deb glpi-agent-task-network_${VERSION}_all.deb --snap glpi-agent_${VERSION}_amd64.snap
+$0 --version $VERSION --rpm SDNESK-agent-$VERSION.noarch.rpm SDNESK-agent-task-network-$VERSION.noarch.rpm \
+  --deb SDNESK-agent_${VERSION}_all.deb SDNESK-agent-task-network_${VERSION}_all.deb --snap SDNESK-agent_${VERSION}_amd64.snap
 
 When creating a dedicated installer, it is possible to make it fully offline by adding
 packages as dependencies. They will be automatically installed with the agent:
-$0 --version $VERSION --distro centos7 --rpm glpi-agent-$VERSION.noarch.rpm \
+$0 --version $VERSION --distro centos7 --rpm SDNESK-agent-$VERSION.noarch.rpm \
   --deps perl-Net-CUPS-0.61-13.el7.x86_64 perl-Parse-EDID-1.0.7-1.el7.noarch
 
 It is also possible to include configuration related files to be installed under

@@ -18,12 +18,12 @@ done
 clear
 echo
 echo
-echo "Welcome to the GLPI Agent Installation script"
+echo "Welcome to the SDNESK Agent Installation script"
 echo
 
 # Help Needed ?
 if [ ! -z ${help+x} ]; then
-    echo "This script is intended to install the GLPI agent on Debian/Ubuntu distribution."
+    echo "This script is intended to install the SDNESK agent on Debian/Ubuntu distribution."
     echo "The --version parameter is used to pass the target version in form of 1.0-1 or 1.0 (if no sub-version exists)."
     echo "The --taskcollect parameter is used to specify if the collect task must be instaled. It is $true by default."
     echo "The --tasknetwork parameter is used to specify if the network task must be instaled. It is $true by default."
@@ -141,7 +141,7 @@ service glpi-agent start
 echo
 echo
 echo "Setup Finished."
-echo "You could find the dependencies installation log in GLPIAgentInstallation.log"
+echo "You could find the dependencies installation log in SDNESKAgentInstallation.log"
 
 
 

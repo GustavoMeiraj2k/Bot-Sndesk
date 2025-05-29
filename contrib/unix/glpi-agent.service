@@ -14,7 +14,7 @@
 # Config files under /etc/glpi-agent/conf.d won't be erased/disabled during upgrades.
 
 [Unit]
-Description=GLPI agent
+Description=SDNESKagent
 Documentation=man:glpi-agent
 After=syslog.target network.target
 

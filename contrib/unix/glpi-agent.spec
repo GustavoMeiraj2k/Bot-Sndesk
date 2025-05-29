@@ -1,7 +1,7 @@
 ## Disabling debug package
 %global debug_package %{nil}
 
-Name:        glpi-agent
+Name:        SDNESK-agent
 Summary:     GLPI inventory agent
 Group:       Applications/System
 License:     GPLv2+
@@ -52,26 +52,26 @@ BuildRequires: sed
 %global __requires_exclude %{?__requires_exclude:%__requires_exclude|}^perl\\(Win32|setup\\)$
 
 %description
-GLPI Agent is an application designed to help a network
+SDNESK Agent is an application designed to help a network
 or system administrator to keep track of the hardware and software
 configurations of computers that are installed on the network.
 
-This agent can send information about the computer to a GLPI server with native
-inventory support or with a FusionInventory compatible GLPI plugin.
+This agent can send information about the computer to a SDNESK server with native
+inventory support or with a FusionInventory compatible SDNESK plugin.
 
 You can add additional packages for optional tasks:
 
-* glpi-agent-task-network
+* SDNESK-agent-task-network
     Network Discovery and Inventory
-* glpi-agent-inventory
+* SDNESK-agent-inventory
     Local inventory
-* glpi-agent-task-deploy
+* SDNESK-agent-task-deploy
     Package deployment
-* glpi-agent-task-esx
+* SDNESK-agent-task-esx
     vCenter/ESX/ESXi remote inventory
-* glpi-agent-task-collect
+* SDNESK-agent-task-collect
     Custom information retrieval
-* glpi-agent-task-wakeonlan
+* SDNESK-agent-task-wakeonlan
     Wake on lan task
 
 You can also install the following package if you prefer to start the agent via
@@ -92,37 +92,37 @@ Summary:    NetDiscovery and NetInventory task for GLPI agent
 Requires:   %{name} = %{version}-%{release}
 
 %description task-network
-glpi-task-netdiscovery and glpi-task-netinventory
+SDNESK-task-netdiscovery and glpi-task-netinventory
 
 %package task-deploy
-Summary:    Software deployment support for GLPI agent
+Summary:    Software deployment support for SDNESK agent
 Requires:   %{name} = %{version}-%{release}
 
 %description task-deploy
-This package provides software deployment support for GLPI agent
+This package provides software deployment support for SDNESK agent
 
 %package task-wakeonlan
 Summary:    WakeOnLan task for GLPI agent
 Requires:   %{name} = %{version}-%{release}
 
 %description task-wakeonlan
-glpi-task-wakeonlan
+SDNESK-task-wakeonlan
 
 %package task-collect
-Summary:    Custom information retrieval support for GLPI agent
+Summary:    Custom information retrieval support for SDNESK agent
 Requires:   %{name} = %{version}-%{release}
 
 %description task-collect
 This package provides custom information retrieval support for
-GLPI agent
+SDNESK agent
 
 %package cron
-Summary:    Cron for GLPI agent
+Summary:    Cron for SDNESK agent
 Requires:   %{name} = %{version}-%{release}
 Requires:   cronie
 
 %description cron
-GLPI agent cron task
+SDNESK agent cron task
 
 
 %prep
@@ -144,7 +144,7 @@ sed \
 
 cat <<EOF | tee %{name}.conf
 #
-# GLPI Agent Configuration File
+# SDNESK Agent Configuration File
 # used by hourly cron job to override the %{name}.cfg setup.
 #
 # /!\
@@ -359,14 +359,14 @@ fi
 - Add Net::SSH2 dependency for remoteinventory support
 
 * Fri Jun 11 2021 Guillaume Bougard <gbougard AT teclib DOT com>
-- Update to support new GLPI Agent protocol
+- Update to support new SDNESK Agent protocol
 
 * Mon May 10 2021 Guillaume Bougard <gbougard AT teclib DOT com>
-- Updates to make official and generic GLPI Agent rpm packages
+- Updates to make official and generic SDNESK Agent rpm packages
 - Remove dmidecode, perl(Net::CUPS) & perl(Parse::EDID) dependencies as they are
   indeed only recommended
 - Replace auto-generated systemd scriptlets with raw scriplets and don't even try
   to enable the service on install as this is useless without a server defined in conf
 
 * Thu Sep 17 2020 Johan Cwiklinski <jcwiklinski AT teclib DOT com>
-- Package of GLPI Agent, based on GLPI Agent officials specfile
+- Package of SDNESK Agent, based on GLPI Agent officials specfile

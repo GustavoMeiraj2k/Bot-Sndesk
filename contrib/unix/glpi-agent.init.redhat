@@ -1,8 +1,8 @@
 #!/bin/sh
 #
 # chkconfig: - 88 12
-# description:  GLPI Agent
-# processname: glpi-agent
+# description:  SDNESK Agent
+# processname: SDNESK-agent
 # config: /etc/sysconfig/glpi-agent
 # pidfile: /var/run/glpi-agent.pid
 ### BEGIN INIT INFO
@@ -18,7 +18,7 @@
 # source function library
 . /etc/rc.d/init.d/functions
 
-desc="GLPI Agent"
+desc="SNDESK Agent"
 prog=glpi-agent
 lockfile=/var/lock/subsys/$prog
 pidfile=/var/run/$prog.pid

@@ -36,11 +36,11 @@ $0 [[-v|--version] VERSION] [--config (CONF.cfg|CERT.(pem|crt)|...)] [--prepare]
 This tools can be used to prepare a linux AppImage installer environment and eventually
 build the AppImage if appimage-builder command is installed.
 
-It need to find official glpi-agent deb files in the current folder.
+It need to find official SDNESK-agent deb files in the current folder.
 
-Set VERSION to the glpi-agent used version.
+Set VERSION to the SDNESK-agent used version.
 
-Typical usage where X.Y is GLPI-Agent version:
+Typical usage where X.Y is SDNESK-Agent version:
 $0 --version X.Y --prepare
 
 It is possible to include configuration related files to be installed under
@@ -167,7 +167,7 @@ version: 1
 AppDir:
   app_info:
     id: org.glpi_project.glpi_agent
-    name: glpi-agent
+    name: SDNESK-agent
     icon: glpi-agent
     version: '$VERSION'
     exec: usr/bin/perl
@@ -248,13 +248,13 @@ cat >build/AppDir/usr/share/metainfo/org.glpi_project.glpi_agent.appdata.xml <<M
 <?xml version="1.0" encoding="UTF-8"?>
 <component>
   <id>org.glpi_project.glpi_agent</id>
-  <name>glpi-agent</name>
-  <summary>glpi-agent is an application essentially designed to keep track of computer inventory submitting it to a GLPI server.</summary>
+  <name>SDNESK-agent</name>
+  <summary>SDNESK-agent is an application essentially designed to keep track of computer inventory submitting it to a SDNESK server.</summary>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
   <description>
     <p>
-      glpi-agent is an application designed to help a network  or system administrator to keep track of the hardware and software configurations of devices.
+      SDNESK-agent is an application designed to help a network  or system administrator to keep track of the hardware and software configurations of devices.
       This agent can collect information from:
       <ol>
         <li>local machine (Inventory)</li>
@@ -264,7 +264,7 @@ cat >build/AppDir/usr/share/metainfo/org.glpi_project.glpi_agent.appdata.xml <<M
       </ol>
     </p>
   </description>
-  <launchable type="service">glpi-agent</launchable>
+  <launchable type="service">SDNESK-agent</launchable>
   <icon type="local" width="144" height="144">/usr/share/icons/144x144/glpi-agent.png</icon>
   <categories>
     <category>System</category>

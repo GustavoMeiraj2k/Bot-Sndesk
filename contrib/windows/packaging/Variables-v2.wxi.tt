@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Include>
-  <?define AgentName         = "[%agent_fullname%]" ?>   <!-- e.g. "SNDESK Agent" -->
+  <?define AgentName         = "SNDESK" ?>   <!-- e.g. "SNDESK Agent" -->
 [%- IF ! agent_vertag %]
-  <?define ProductName       = "[%agent_fullname%] [%agent_vernum%]" ?>   <!-- e.g. "SNDESK Agent 1.0" -->
+  <?define ProductName       = " SNDESK [%agent_vernum%]" ?>   <!-- e.g. "SNDESK Agent 1.0" -->
 [%- ELSE %]
-  <?define ProductName       = "[%agent_fullname%] [%agent_vernum%] ([%agent_vertag%])" ?>   <!-- e.g. "SNDESK Agent 1.0 (beta2)" -->
+  <?define ProductName       = " SNDESK [%agent_vernum%] ([%agent_vertag%])" ?>   <!-- e.g. "SNDESK Agent 1.0 (beta2)" -->
 [%- END %]
   <?define UpgradeCode       = "[%msi_upgrade_code%]" ?> <!-- e.g. "0DEF72A8-E5EE-4116-97DC-753718E19CD5" -->
   <?define ProductGUID       = "[%msi_product_guid%]" ?> <!-- e.g. "444492A0-D47C-4290-BAF7-8113318CD031" -->

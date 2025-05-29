@@ -175,7 +175,7 @@
   <String Id="OutOfDiskDlg_Title">SNDESK Setup</String>
   <String Id="OutOfRbDiskDlg_Title">SNDESK Setup</String>
   <String Id="ProgressDlg_Title">SNDESK Setup</String>
-  <String Id="ResumeDlg_Title">[ProductName] Setup</String>
+  <String Id="ResumeDlg_Title">SNDESK Setup</String>
   <String Id="SetupTypeDlg_Title">SNDESK Setup</String>
   <String Id="UserExit_Title">SNDESK Setup</String>
   <String Id="VerifyReadyDlg_Title">SNDESK Setup</String>

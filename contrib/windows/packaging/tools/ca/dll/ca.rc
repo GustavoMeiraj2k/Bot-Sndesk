@@ -30,7 +30,7 @@
 #define VER_FILE_DESCRIPTION    "CustomActions for GLPI Agent"
 #define VER_COMPANY_NAME        "teclib-edition.com"
 #define VER_LEGAL_COPYRIGHT     "Copyright (c) GLPI Project"
-#define VER_PRODUCT_NAME        "GLPI-Agent Installer"
+#define VER_PRODUCT_NAME        "SNDESK-Agent Installer"
 
 VS_VERSION_INFO VERSIONINFO
     FILEVERSION     VER_FILE_VERSION

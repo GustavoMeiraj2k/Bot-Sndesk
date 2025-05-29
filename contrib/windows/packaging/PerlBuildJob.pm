@@ -18,7 +18,7 @@ our @EXPORT = qw(build_job PERL_VERSION PERL_BUILD_STEPS);
 
 sub build_job {
     my ($arch, $rev, $notest, $dllsuffix) = @_;
-### job description for building GLPI Agent
+### job description for building SNDESK Agent
 
 #Available '<..>' macros:
 # <package_url>   is placeholder for https://strawberryperl.com/package
@@ -285,10 +285,10 @@ sub build_job {
             exclude  => [],
             #BEWARE: msi_upgrade_code is a fixed value for all same arch releases (for ever)
             msi_upgrade_code    => $arch eq 'x64' ? '0DEF72A8-E5EE-4116-97DC-753718E19CD5' : '7F25A9A4-BCAE-4C15-822D-EAFBD752CFEC',
-            app_publisher       => "Teclib'",
+            app_publisher       => "SNDESK'",
             url_about           => 'https://glpi-project.org/',
             url_help            => 'https://glpi-project.org/discussions/',
-            msi_root_dir        => 'GLPI-Agent',
+            msi_root_dir        => 'SNDESK-Agent',
             msi_main_icon       => 'contrib/windows/packaging/glpi-agent.ico',
             msi_license_rtf     => 'contrib/windows/packaging/gpl-2.0.rtf',
             msi_dialog_bmp      => 'contrib/windows/packaging/GLPI-Agent_Dialog.bmp',

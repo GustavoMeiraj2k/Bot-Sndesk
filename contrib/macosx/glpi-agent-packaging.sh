@@ -65,12 +65,12 @@ done
 : ${ARCH:=$(uname -m)}
 case "$(uname -s) $ARCH" in
     Darwin*x86_64)
-        echo "GLPI-Agent MacOSX Packaging for $ARCH..."
+        echo "SNDESK-Agent MacOSX Packaging for $ARCH..."
         : ${MACOSX_DEPLOYMENT_TARGET:=10.10}
         OPENSSL_CONFIG="darwin64-x86_64-cc"
         ;;
     Darwin*arm64)
-        echo "GLPI-Agent MacOSX Packaging for $ARCH..."
+        echo "SNDESK-Agent MacOSX Packaging for $ARCH..."
         : ${MACOSX_DEPLOYMENT_TARGET:=11.0}
         OPENSSL_CONFIG="darwin64-arm64-cc"
         # Try to disable annoying warning
@@ -444,11 +444,11 @@ cat >pkg/build-info.plist <<-BUILD_INFO
 	    <key>distribution_style</key>
 	    <true/>
 	    <key>identifier</key>
-	    <string>com.teclib.glpi-agent</string>
+	    <string>com.teclib.SNDESK-agent</string>
 	    <key>install_location</key>
 	    <string>/</string>
 	    <key>name</key>
-	    <string>GLPI-Agent-${VERSION}_$ARCH.pkg</string>
+	    <string>SNDESK-Agent-${VERSION}_$ARCH.pkg</string>
 	    <key>ownership</key>
 	    <string>recommended</string>
 	    <key>postinstall_action</key>
@@ -530,14 +530,14 @@ CODE_SIGNING
     echo "Signed files: $SIGNED"
 fi
 
-PKG="GLPI-Agent-${VERSION}_$ARCH.pkg"
-DMG="GLPI-Agent-${VERSION}_$ARCH.dmg"
+PKG="SNDESK-Agent-${VERSION}_$ARCH.pkg"
+DMG="SNDESK-Agent-${VERSION}_$ARCH.dmg"
 
 echo "Prepare distribution installer..."
 cat >pkg/Distribution.xml <<-CUSTOM
 	<?xml version="1.0" encoding="utf-8" standalone="no"?>
 	<installer-gui-script minSpecVersion="2">
-	    <title>GLPI-Agent $VERSION ($ARCH)</title>
+	    <title>SNDESK-Agent $VERSION ($ARCH)</title>
 	    <pkg-ref id="com.teclib.glpi-agent" version="$VERSION" onConclusion="none">$PKG</pkg-ref>
 	    <license file="License.txt" mime-type="text/plain" />
 	    <background file="background.png" uti="public.png" alignment="bottomleft"/>
@@ -569,15 +569,15 @@ cat >pkg/payload/Applications/GLPI-Agent/Contents/Info.plist <<-INFO_PLIST
 	    <key>CFBundleVersion</key>
 	    <string>$VERSION</string>
 	    <key>NSHumanReadableCopyright</key>
-	    <string>Copyright 2023 GLPI-Project, GNU General Public License v2</string>
+	    <string>Copyright 2023 SNDESK-Project, GNU General Public License v2</string>
 	    <key>CFBundleDevelopmentRegion</key>
 	    <string>en</string>
 	    <key>CFBundleName</key>
-	    <string>GLPI-Agent</string>
+	    <string>SNDESK-Agent</string>
 	    <key>CFBundleExecutable</key>
-	    <string>glpi-agent</string>
+	    <string>SNDESK-agent</string>
 	    <key>CFBundleIdentifier</key>
-	    <string>com.teclib.glpi-agent</string>
+	    <string>com.sonoda.SNDESK-agent</string>
 	    <key>CFBundleInfoDictionaryVersion</key>
 	    <string>6.0</string>
 	    <key>CFBundlePackageType</key>
@@ -619,7 +619,7 @@ mv -vf "pkg/build/$PKG" "build/$PKG"
 
 rm -f "build/$DMG"
 echo "Create DMG"
-hdiutil create -volname "GLPI-Agent $VERSION ($ARCH) installer" -fs "HFS+" -srcfolder "build/$PKG" "build/$DMG"
+hdiutil create -volname "SNDESK-Agent $VERSION ($ARCH) installer" -fs "HFS+" -srcfolder "build/$PKG" "build/$DMG"
 
 # Sign dmg file
 if [ -n "$APPSIGNID" ]; then

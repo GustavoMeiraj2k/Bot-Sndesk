@@ -3,193 +3,193 @@
 <WixLocalization Culture="en-US" xmlns="http://schemas.microsoft.com/wix/2006/localization">
   <!-- see https://iirf.svn.codeplex.com/svn/v2.x/Setup/CustomText.wxl -->
 
-  <String Id="WelcomeDlg_Title">SNDESK Setup</String>
-  <String Id="WelcomeDlgTitle">{\WixUI_Font_Bigger}Welcome to the Setup Wizard for SNDESK Agent</String>
+  <String Id="WelcomeDlg_Title">Instalação SNDESK</String>
+  <String Id="WelcomeDlgTitle">{\WixUI_Font_Bigger}Bem-vindo ao Assistente de Instalação do SNDESK Agent</String>
 
   <!-- custom text on welcome dialog -->
 [%- IF msi_debug==0 && ! agent_vertag %]
-  <String Id="WelcomeDlgDescription">The Setup Wizard will install SNDESK on your computer. Click Next to continue or Cancel to exit Setup.</String>
+  <String Id="WelcomeDlgDescription">O Assistente de Instalação irá instalar o SNDESK em seu computador. Clique em Avançar para continuar ou Cancelar para sair da instalação.</String>
 [%- ELSIF msi_debug!=0 && ! agent_vertag %]
-  <String Id="WelcomeDlgDescription">The Setup Wizard will install SNDESK on your computer. Click Next to continue or Cancel to exit Setup.&#13;&#10;&#13;&#10;BEWARE: this is MSI_DEBUG build!</String>
+  <String Id="WelcomeDlgDescription">O Assistente de Instalação irá instalar o SNDESK em seu computador. Clique em Avançar para continuar ou Cancelar para sair da instalação.&#13;&#10;&#13;&#10;ATENÇÃO: esta é uma versão MSI_DEBUG!</String>
 [%- ELSIF msi_debug==0 && agent_vertag %]
-  <String Id="WelcomeDlgDescription">The Setup Wizard will install SNDESK on your computer. Click Next to continue or Cancel to exit Setup.&#13;&#10;&#13;&#10;BEWARE: this is [%agent_vertag%] build!</String>
+  <String Id="WelcomeDlgDescription">O Assistente de Instalação irá instalar o SNDESK em seu computador. Clique em Avançar para continuar ou Cancelar para sair da instalação.&#13;&#10;&#13;&#10;ATENÇÃO: esta é uma versão [%agent_vertag%]!</String>
 [%- ELSIF msi_debug!=0 && agent_vertag %]
-  <String Id="WelcomeDlgDescription">The Setup Wizard will install SNDESK on your computer. Click Next to continue or Cancel to exit Setup.&#13;&#10;&#13;&#10;BEWARE: this is [%agent_vertag%] build!&#13;&#10;&#13;&#10;BEWARE: this is MSI_DEBUG build!</String>
+  <String Id="WelcomeDlgDescription">O Assistente de Instalação irá instalar o SNDESK em seu computador. Clique em Avançar para continuar ou Cancelar para sair da instalação.&#13;&#10;&#13;&#10;ATENÇÃO: esta é uma versão [%agent_vertag%]!&#13;&#10;&#13;&#10;ATENÇÃO: esta é uma versão MSI_DEBUG!</String>
 [%- END %]
 
-  <String Id="PrepareDlg_Title">SNDESK Setup</String>
-  <String Id="PrepareDlgTitle">{\WixUI_Font_Bigger}Welcome to the Setup Wizard for SNDESK Agent </String>
+  <String Id="PrepareDlg_Title">Instalação SNDESK</String>
+  <String Id="PrepareDlgTitle">{\WixUI_Font_Bigger}Bem-vindo ao Assistente de Instalação do SNDESK Agent</String>
 
   <!-- custom text on features dialog -->
   <String Id="ProductTitle">SNDESK Agent</String>
-  <String Id="ProductDescription">SNDESK Agent core including Inventory task.</String>
-  <String Id="NetInventory">Netinventory and NetDiscovery support</String>
-  <String Id="NetInventoryDescription">All the necessary files to run network discovery and inventory tasks.</String>
-  <String Id="Deploy">Deploy support</String>
-  <String Id="DeployDescription">All the necessary files to deploy packages.</String>
-  <String Id="Collect">Collect support</String>
-  <String Id="CollectDescription">All the necessary files to collect datas.</String>
-  <String Id="Esx">ESX remote inventory support</String>
-  <String Id="EsxDescription">All the necessary files to inventory ESX servers.</String>
-  <String Id="Wol">Wake-On-Lan support</String>
-  <String Id="WolDescription">All the necessary files to wake up equipements in your network.</String>
+  <String Id="ProductDescription">Núcleo do SNDESK Agent incluindo tarefa de Inventário.</String>
+  <String Id="NetInventory">Suporte a Netinventory e NetDiscovery</String>
+  <String Id="NetInventoryDescription">Todos os arquivos necessários para executar tarefas de descoberta de rede e inventário.</String>
+  <String Id="Deploy">Suporte a Deploy</String>
+  <String Id="DeployDescription">Todos os arquivos necessários para implantar pacotes.</String>
+  <String Id="Collect">Suporte a Coleta</String>
+  <String Id="CollectDescription">Todos os arquivos necessários para coletar dados.</String>
+  <String Id="Esx">Suporte a inventário remoto ESX</String>
+  <String Id="EsxDescription">Todos os arquivos necessários para inventariar servidores ESX.</String>
+  <String Id="Wol">Suporte a Wake-On-Lan</String>
+  <String Id="WolDescription">Todos os arquivos necessários para acordar equipamentos em sua rede.</String>
 
   <!-- custom text for service registration -->
   <String Id="ServiceDisplayName">[%agent_fullname%]</String>
-  <String Id="ServiceDescription">[%agent_fullname%] is an inventory agent. It is intended to upload system inventory toward a SNDESK server on a regular basis.</String>
+  <String Id="ServiceDescription">[%agent_fullname%] é um agente de inventário. Destina-se a enviar inventário do sistema para um servidor SNDESK regularmente.</String>
 
   <!-- custom text for target setup dialog -->
-  <String Id="TargetSetupDlg_Title">SNDESK Target Setup</String>
-  <String Id="TargetSetupDlg_TextTitle">{\WixUI_Font_Title}Choose Targets</String>
-  <String Id="TargetSetupDlg_Description">Choose where the result will be sent.</String>
-  <String Id="TargetSetupDlg_LocalMode">Local Target</String>
-  <String Id="TargetSetupDlg_LocalModeDescription">Local path or UNC path</String>
-  <String Id="TargetSetupDlg_ServerMode">Remote Targets</String>
-  <String Id="TargetSetupDlg_ServerModeDescription">You can set multiple URIs by separating them with commas</String>
-  <String Id="TargetSetupDlg_ServerModeExample">'https://server/glpi/,...'</String>
-  <String Id="TargetSetupDlg_QuickInstall">Quick installation</String>
-  <String Id="TargetSetupDlg_QuickInstallToolTips">do not show the rest of windows options</String>
+  <String Id="TargetSetupDlg_Title">Configuração de Destino SNDESK</String>
+  <String Id="TargetSetupDlg_TextTitle">{\WixUI_Font_Title}Escolher Destinos</String>
+  <String Id="TargetSetupDlg_Description">Escolha onde o resultado será enviado.</String>
+  <String Id="TargetSetupDlg_LocalMode">Destino Local</String>
+  <String Id="TargetSetupDlg_LocalModeDescription">Caminho local ou caminho UNC</String>
+  <String Id="TargetSetupDlg_ServerMode">Destinos Remotos</String>
+  <String Id="TargetSetupDlg_ServerModeDescription">Você pode definir múltiplas URIs separando-as com vírgulas</String>
+  <String Id="TargetSetupDlg_ServerModeExample">'https://servidor/glpi/,...'</String>
+  <String Id="TargetSetupDlg_QuickInstall">Instalação rápida</String>
+  <String Id="TargetSetupDlg_QuickInstallToolTips">não mostrar o restante das opções das janelas</String>
 
   <!-- custom text for local target setup dialog -->
-  <String Id="BrowseLocalDlg_Title">SNDESK Local Target Setup</String>
-  <String Id="BrowseLocalDlgPathLabel">&amp;Local target destination:</String>
-  <String Id="BrowseLocalDlgTitle">{\WixUI_Font_Title}Change Local Target destination folder</String>
+  <String Id="BrowseLocalDlg_Title">Configuração de Destino Local SNDESK</String>
+  <String Id="BrowseLocalDlgPathLabel">&amp;Destino local:</String>
+  <String Id="BrowseLocalDlgTitle">{\WixUI_Font_Title}Alterar pasta de destino local</String>
 
   <!-- custom text for server target SSL options setup dialog -->
-  <String Id="ServerSSLSetupDlgTitle">SNDESK Setup</String>
-  <String Id="ServerSSLSetupDlg_Title">{\WixUI_Font_Title}Remote Targets SSL Options</String>
-  <String Id="ServerSSLSetupDlgDescription">Set SSL options.</String>
-  <String Id="ServerSSLSetupGroup">SSL Options</String>
-  <String Id="CACertDirDescription">CA Certificates Directory</String>
-  <String Id="CACertFileDescription">CA Certificate File</String>
-  <String Id="SSLFingerPrintDescription">Fingerprint of SSL certificate to trust</String>
-  <String Id="NoSSLCheckDescription">Disable SSL check (for security reason, only use it for debugging)</String>
+  <String Id="ServerSSLSetupDlgTitle">Instalação SNDESK</String>
+  <String Id="ServerSSLSetupDlg_Title">{\WixUI_Font_Title}Opções SSL de Destinos Remotos</String>
+  <String Id="ServerSSLSetupDlgDescription">Definir opções SSL.</String>
+  <String Id="ServerSSLSetupGroup">Opções SSL</String>
+  <String Id="CACertDirDescription">Diretório de Certificados CA</String>
+  <String Id="CACertFileDescription">Arquivo de Certificado CA</String>
+  <String Id="SSLFingerPrintDescription">Impressão digital do certificado SSL para confiar</String>
+  <String Id="NoSSLCheckDescription">Desabilitar verificação SSL (por motivos de segurança, use apenas para depuração)</String>
 
   <!-- custom text for server target options setup dialog -->
-  <String Id="ServerSetupDlgTitle">SNDESK Setup</String>
-  <String Id="ServerSetupDlg_Title">{\WixUI_Font_Title}Server Target Options</String>
-  <String Id="ServerSetupDlgDescription">Set server target options.</String>
-  <String Id="ProxyServerSetupGroup">Proxy Options</String>
-  <String Id="ProxyServerDescription">Proxy server</String>
-  <String Id="ServerAuthenticationSetupGroup">Authentication Options</String>
-  <String Id="BasicAuthenticationUserDescription">Basic authentication user</String>
-  <String Id="BasicAuthenticationPasswordDescription">Basic authentication password</String>
-  <String Id="OAuthAuthenticationClientIdDescription">OAuth Client ID</String>
-  <String Id="OAuthAuthenticationClientSecretDescription">OAuth Client secret</String>
+  <String Id="ServerSetupDlgTitle">Instalação SNDESK</String>
+  <String Id="ServerSetupDlg_Title">{\WixUI_Font_Title}Opções de Destino do Servidor</String>
+  <String Id="ServerSetupDlgDescription">Definir opções de destino do servidor.</String>
+  <String Id="ProxyServerSetupGroup">Opções de Proxy</String>
+  <String Id="ProxyServerDescription">Servidor proxy</String>
+  <String Id="ServerAuthenticationSetupGroup">Opções de Autenticação</String>
+  <String Id="BasicAuthenticationUserDescription">Usuário de autenticação básica</String>
+  <String Id="BasicAuthenticationPasswordDescription">Senha de autenticação básica</String>
+  <String Id="OAuthAuthenticationClientIdDescription">ID do Cliente OAuth</String>
+  <String Id="OAuthAuthenticationClientSecretDescription">Segredo do Cliente OAuth</String>
 
   <!-- custom text for execution mode setup dialog -->
-  <String Id="ExecModeDlgTitle">SNDESK Setup</String>
-  <String Id="ExecModeDlg_Title">{\WixUI_Font_Title}Choose an Execution Mode</String>
-  <String Id="ExecModeDlgDescription">Choose which way you want [%agent_fullname%] to be executed.</String>
-  <String Id="ExecModeDlgGroup">Execution Mode</String>
-  <String Id="ExecModeDlgService">As a Windows Service</String>
-  <String Id="ExecModeDlgTaskScheduler">As a Windows Task</String>
-  <String Id="ExecModeDlgManual">Manually</String>
-  <String Id="RunNow">Run inventory immediatly after installation</String>
-  <String Id="Lazy">Respect the frequency of inventories specified by the server (recommended)</String>
-  <String Id="LazyToolTip">Lazy option</String>
-  <String Id="InstallAgentMonitor">Install SNDESK-AgentMonitor as systray icon for all users</String>
+  <String Id="ExecModeDlgTitle">Instalação SNDESK</String>
+  <String Id="ExecModeDlg_Title">{\WixUI_Font_Title}Escolher um Modo de Execução</String>
+  <String Id="ExecModeDlgDescription">Escolha a forma como você deseja que o [%agent_fullname%] seja executado.</String>
+  <String Id="ExecModeDlgGroup">Modo de Execução</String>
+  <String Id="ExecModeDlgService">Como um Serviço do Windows</String>
+  <String Id="ExecModeDlgTaskScheduler">Como uma Tarefa do Windows</String>
+  <String Id="ExecModeDlgManual">Manualmente</String>
+  <String Id="RunNow">Executar inventário imediatamente após a instalação</String>
+  <String Id="Lazy">Respeitar a frequência de inventários especificada pelo servidor (recomendado)</String>
+  <String Id="LazyToolTip">Opção Lazy</String>
+  <String Id="InstallAgentMonitor">Instalar SNDESK-AgentMonitor como ícone na bandeja do sistema para todos os usuários</String>
 
   <!-- custom text for windows task mode setup dialog -->
-  <String Id="TaskModeDlgTitle">SNDESK Setup</String>
-  <String Id="TaskModeDlg_Title">{\WixUI_Font_Title}Windows Task Options</String>
-  <String Id="TaskModeDlgDescription">Set Windows Task Options.</String>
-  <String Id="TaskModeGroup">Windows Task Options</String>
-  <String Id="IntervalUnit">Frequency</String>
-  <String Id="MinuteInterval">Minute Interval</String>
-  <String Id="HourlyInterval">Hour Interval</String>
-  <String Id="DailyInterval">Day Interval</String>
-  <String Id="Minute">Minute</String>
-  <String Id="Hourly">Hourly</String>
-  <String Id="Daily">Daily</String>
+  <String Id="TaskModeDlgTitle">Instalação SNDESK</String>
+  <String Id="TaskModeDlg_Title">{\WixUI_Font_Title}Opções de Tarefa do Windows</String>
+  <String Id="TaskModeDlgDescription">Definir Opções de Tarefa do Windows.</String>
+  <String Id="TaskModeGroup">Opções de Tarefa do Windows</String>
+  <String Id="IntervalUnit">Frequência</String>
+  <String Id="MinuteInterval">Intervalo em Minutos</String>
+  <String Id="HourlyInterval">Intervalo em Horas</String>
+  <String Id="DailyInterval">Intervalo em Dias</String>
+  <String Id="Minute">Minuto</String>
+  <String Id="Hourly">Por Hora</String>
+  <String Id="Daily">Diário</String>
 
   <!-- custom text for httpd options setup dialog -->
-  <String Id="HTTPServerSetupDlgTitle">SNDESK Setup</String>
-  <String Id="HTTPServerSetupDlg_Title">{\WixUI_Font_Title}HTTP Server Options</String>
-  <String Id="HTTPServerSetupDlgDescription">Set embedded HTTP server options.</String>
-  <String Id="HTTPServerSetupDlgGroup">Embedded HTTP Server Options</String>
+  <String Id="HTTPServerSetupDlgTitle">Instalação SNDESK</String>
+  <String Id="HTTPServerSetupDlg_Title">{\WixUI_Font_Title}Opções do Servidor HTTP</String>
+  <String Id="HTTPServerSetupDlgDescription">Definir opções do servidor HTTP integrado.</String>
+  <String Id="HTTPServerSetupDlgGroup">Opções do Servidor HTTP Integrado</String>
   <String Id="HTTPServerSetupIP">IP</String>
-  <String Id="HTTPServerSetupPort">Port</String>
-  <String Id="HTTPServerSetupTrustedIPs">Trusted IPs</String>
-  <String Id="HTTPServerSetupAddFirewallException">Add exception on the Windows Firewall</String>
-  <String Id="HTTPServerSetupEnableServer">Enable embedded HTTP server</String>
+  <String Id="HTTPServerSetupPort">Porta</String>
+  <String Id="HTTPServerSetupTrustedIPs">IPs Confiáveis</String>
+  <String Id="HTTPServerSetupAddFirewallException">Adicionar exceção no Firewall do Windows</String>
+  <String Id="HTTPServerSetupEnableServer">Habilitar servidor HTTP integrado</String>
 
   <!-- custom text for miscelaneous options setup dialog -->
-  <String Id="MiscelaneousOptionsDlgTitle">SNDESK Setup</String>
-  <String Id="MiscelaneousOptionsDlg_Title">{\WixUI_Font_Title}Miscelaneous Options</String>
-  <String Id="MiscelaneousOptionsDlgDescription">Set preferences about miscelaneous options.</String>
-  <String Id="MiscelaneousOptionsGroup">Miscelaneous Options</String>
+  <String Id="MiscelaneousOptionsDlgTitle">Instalação SNDESK</String>
+  <String Id="MiscelaneousOptionsDlg_Title">{\WixUI_Font_Title}Opções Diversas</String>
+  <String Id="MiscelaneousOptionsDlgDescription">Definir preferências sobre opções diversas.</String>
+  <String Id="MiscelaneousOptionsGroup">Opções Diversas</String>
   <String Id="TagOption">Tag</String>
-  <String Id="ScanHomedirsOption">Scan home directory for virtual machines</String>
-  <String Id="ScanProfilesOption">Scan user profiles for software</String>
-  <String Id="SaveAsJsonOption">Save local inventory using JSON format</String>
+  <String Id="ScanHomedirsOption">Examinar diretório home para máquinas virtuais</String>
+  <String Id="ScanProfilesOption">Examinar perfis de usuário para software</String>
+  <String Id="SaveAsJsonOption">Salvar inventário local usando formato JSON</String>
 
   <!-- custom text for advanced options setup dialog -->
-  <String Id="AdvancedOptionsDlgTitle">SNDESK Setup</String>
-  <String Id="AdvancedOptionsDlg_Title">{\WixUI_Font_Title}Advanced Options</String>
-  <String Id="AdvancedOptionsDlgDescription">Set Advanced Options.</String>
-  <String Id="AdvancedAdvice">Please, do not change the following options whether you are not totally sure what you are doing and why.</String>
-  <String Id="TimeOptionsGrp">Time Options (in seconds)</String>
-  <String Id="TimeOut">Connection Time Out</String>
-  <String Id="DelayTime">Delay Before the First Target</String>
-  <String Id="BackendCollectTimeOut">Task Execution Time Out</String>
-  <String Id="OtherOptionsGrp">Other Options</String>
-  <String Id="P2POption">No P2P</String>
-  <String Id="Tasks">Scheduled tasks</String>
-  <String Id="TasksFormat">tasks list separated by commas</String>
-  <String Id="NoTask">Omit These Tasks</String>
-  <String Id="NoTaskFormat">tasks list separated by commas</String>
-  <String Id="NoCategory">Omit These Categories</String>
-  <String Id="NoCategoryFormat">category list separated by commas</String>
+  <String Id="AdvancedOptionsDlgTitle">Instalação SNDESK</String>
+  <String Id="AdvancedOptionsDlg_Title">{\WixUI_Font_Title}Opções Avançadas</String>
+  <String Id="AdvancedOptionsDlgDescription">Definir Opções Avançadas.</String>
+  <String Id="AdvancedAdvice">Por favor, não altere as seguintes opções a menos que você tenha certeza absoluta do que está fazendo e por quê.</String>
+  <String Id="TimeOptionsGrp">Opções de Tempo (em segundos)</String>
+  <String Id="TimeOut">Tempo Limite de Conexão</String>
+  <String Id="DelayTime">Atraso Antes do Primeiro Destino</String>
+  <String Id="BackendCollectTimeOut">Tempo Limite de Execução de Tarefa</String>
+  <String Id="OtherOptionsGrp">Outras Opções</String>
+  <String Id="P2POption">Sem P2P</String>
+  <String Id="Tasks">Tarefas agendadas</String>
+  <String Id="TasksFormat">lista de tarefas separadas por vírgulas</String>
+  <String Id="NoTask">Omitir Estas Tarefas</String>
+  <String Id="NoTaskFormat">lista de tarefas separadas por vírgulas</String>
+  <String Id="NoCategory">Omitir Estas Categorias</String>
+  <String Id="NoCategoryFormat">lista de categorias separadas por vírgulas</String>
 
   <!-- custom text for debug options setup dialog -->
-  <String Id="DebugOptionsDlgTitle">SNDESK Setup</String>
-  <String Id="DebugOptionsDlg_Title">{\WixUI_Font_Title}Debug Options</String>
-  <String Id="DebugOptionsDlgDescription">Set debug options.</String>
-  <String Id="DebugOptionsGroup">Debug Options</String>
-  <String Id="DebugOption">Debug Level</String>
-  <String Id="Debug0">No debug</String>
-  <String Id="Debug1">Level 1</String>
-  <String Id="Debug2">Level 2</String>
+  <String Id="DebugOptionsDlgTitle">Instalação SNDESK</String>
+  <String Id="DebugOptionsDlg_Title">{\WixUI_Font_Title}Opções de Depuração</String>
+  <String Id="DebugOptionsDlgDescription">Definir opções de depuração.</String>
+  <String Id="DebugOptionsGroup">Opções de Depuração</String>
+  <String Id="DebugOption">Nível de Depuração</String>
+  <String Id="Debug0">Sem depuração</String>
+  <String Id="Debug1">Nível 1</String>
+  <String Id="Debug2">Nível 2</String>
   <String Id="LoggerOption">Logger</String>
-  <String Id="FileLogger">File</String>
-  <String Id="StderrLogger">Standard error output (stderr)</String>
-  <String Id="LogFileOption">Log File</String>
-  <String Id="LogFileMaxSizeOption">Log File Max. Size (in MiB)</String>
+  <String Id="FileLogger">Arquivo</String>
+  <String Id="StderrLogger">Saída de erro padrão (stderr)</String>
+  <String Id="LogFileOption">Arquivo de Log</String>
+  <String Id="LogFileMaxSizeOption">Tamanho Máx. do Arquivo de Log (em MiB)</String>
 
   <!-- custom title with version on all dialog titles -->
-  <String Id="BrowseDlg_Title">SNDESK] Setup</String>
-  <String Id="CancelDlg_Title">SNDESK Setup</String>
-  <String Id="CustomizeDlg_Title">SNDESK Setup</String>
-  <String Id="DiskCostDlg_Title">SNDESK Setup</String>
-  <String Id="ErrorDlg_Title">SNDESK Setup</String>
-  <String Id="ExitDialog_Title">SNDESK Setup</String>
-  <String Id="FatalError_Title">SNDESK Setup</String>
-  <String Id="FeaturesDlg_Title">SNDESK Setup</String>
-  <String Id="FilesInUse_Title">SNDESK Setup</String>
-  <String Id="InstallDirDlg_Title">SNDESK Setup</String>
-  <String Id="InvalidDirDlg_Title">SNDESK Setup</String>
-  <String Id="MaintenanceTypeDlg_Title">SNDESK Setup</String>
-  <String Id="MaintenanceWelcomeDlg_Title">SNDESK Setup</String>
-  <String Id="MsiRMFilesInUse_Title">SNDESK Setup</String>
-  <String Id="OutOfDiskDlg_Title">SNDESK Setup</String>
-  <String Id="OutOfRbDiskDlg_Title">SNDESK Setup</String>
-  <String Id="ProgressDlg_Title">SNDESK Setup</String>
-  <String Id="ResumeDlg_Title">SNDESK Setup</String>
-  <String Id="SetupTypeDlg_Title">SNDESK Setup</String>
-  <String Id="UserExit_Title">SNDESK Setup</String>
-  <String Id="VerifyReadyDlg_Title">SNDESK Setup</String>
-  <String Id="WaitForCostingDlg_Title">SNDESK Setup</String>
-  <String Id="LicenseAgreementDlg_Title">SNDESK Setup</String>
+  <String Id="BrowseDlg_Title">Instalação SNDESK</String>
+  <String Id="CancelDlg_Title">Instalação SNDESK</String>
+  <String Id="CustomizeDlg_Title">Instalação SNDESK</String>
+  <String Id="DiskCostDlg_Title">Instalação SNDESK</String>
+  <String Id="ErrorDlg_Title">Instalação SNDESK</String>
+  <String Id="ExitDialog_Title">Instalação SNDESK</String>
+  <String Id="FatalError_Title">Instalação SNDESK</String>
+  <String Id="FeaturesDlg_Title">Instalação SNDESK</String>
+  <String Id="FilesInUse_Title">Instalação SNDESK</String>
+  <String Id="InstallDirDlg_Title">Instalação SNDESK</String>
+  <String Id="InvalidDirDlg_Title">Instalação SNDESK</String>
+  <String Id="MaintenanceTypeDlg_Title">Instalação SNDESK</String>
+  <String Id="MaintenanceWelcomeDlg_Title">Instalação SNDESK</String>
+  <String Id="MsiRMFilesInUse_Title">Instalação SNDESK</String>
+  <String Id="OutOfDiskDlg_Title">Instalação SNDESK</String>
+  <String Id="OutOfRbDiskDlg_Title">Instalação SNDESK</String>
+  <String Id="ProgressDlg_Title">Instalação SNDESK</String>
+  <String Id="ResumeDlg_Title">Instalação SNDESK</String>
+  <String Id="SetupTypeDlg_Title">Instalação SNDESK</String>
+  <String Id="UserExit_Title">Instalação SNDESK</String>
+  <String Id="VerifyReadyDlg_Title">Instalação SNDESK</String>
+  <String Id="WaitForCostingDlg_Title">Instalação SNDESK</String>
+  <String Id="LicenseAgreementDlg_Title">Instalação SNDESK</String>
 
   <!-- some other custom dialog texts -->
-  <String Id="SetupTypeDlgTypicalText">Installs the most common program features with only Inventory and RemoteInventory tasks support.</String>
-  <String Id="SetupTypeDlgCompleteText">All program features will be installed.</String>
-  <String Id="ProgressDlgTitleInstalling">{\WixUI_Font_Title}Installing SNDESK</String>
-  <String Id="RunningAgent">Running SNDESK Agent, this may take a while...</String>
+  <String Id="SetupTypeDlgTypicalText">Instala os recursos mais comuns do programa com suporte apenas para tarefas de Inventário e InventárioRemoto.</String>
+  <String Id="SetupTypeDlgCompleteText">Todos os recursos do programa serão instalados.</String>
+  <String Id="ProgressDlgTitleInstalling">{\WixUI_Font_Title}Instalando SNDESK</String>
+  <String Id="RunningAgent">Executando SNDESK Agent, isso pode demorar um pouco...</String>
 
   <!-- texts related to firewall exceptions -->
   <String Id="FirewallExceptionName">SNDESK Agent</String>
-  <String Id="FirewallExceptionDescription">SNDESK Agent embedded HTTP server incoming traffic</String>
-  <String Id="OutgoingFirewallExceptionDescription">SNDESK Agent outgoing traffic</String>
+  <String Id="FirewallExceptionDescription">Tráfego de entrada do servidor HTTP integrado do SNDESK Agent</String>
+  <String Id="OutgoingFirewallExceptionDescription">Tráfego de saída do SNDESK Agent</String>
 </WixLocalization>

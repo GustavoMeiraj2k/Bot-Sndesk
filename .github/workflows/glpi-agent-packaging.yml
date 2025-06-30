@@ -280,6 +280,30 @@ jobs:
       run: |
         perl contrib\windows\glpi-agent-extlibs-build.pl --arch ${{ matrix.arch }} --cadll
       shell: cmd
+               - name: Copy custom agent configuration
+               run: |
+                 if exist agent.cfg (
+                   echo Copying custom agent.cfg configuration
+                   if not exist "contrib\windows\packaging\GLPI-Agent\etc\" mkdir "contrib\windows\packaging\GLPI-Agent\etc\"
+                   copy agent.cfg contrib\windows\packaging\GLPI-Agent\etc\agent.cfg
+                 ) else (
+                   echo Warning: agent.cfg not found in repository root
+                 )
+               shell: cmd
+                 - name: Build package
+                   run: |
+                     perl contrib\windows\glpi-agent-packaging.pl --arch ${{ matrix.arch }}
+                   shell: cmd
+                 - name: MSI Signing
+                   if: ${{ needs.setup-release.outputs.win32-signing == 'yes' }}
+                   run: |
+                     set OUTPUT=C:\Strawberry-perl-for-GLPI-Agent_build\output
+                     set MSI=GLPI-Agent-${{ needs.setup-release.outputs.version }}-${{ matrix.arch }}.msi
+                     set SIGNED=GLPI-Agent-${{ needs.setup-release.outputs.version }}-${{ matrix.arch }}-signed.msi
+                     perl contrib\windows\code-signing.pl %OUTPUT%\%MSI% %OUTPUT%\%SIGNED%
+                     del /F %OUTPUT%\%MSI%
+                     ren %OUTPUT%\%SIGNED% %MSI%
+                   shell: cmd
     - name: Build package
       run: |
         perl contrib\windows\glpi-agent-packaging.pl --arch ${{ matrix.arch }}

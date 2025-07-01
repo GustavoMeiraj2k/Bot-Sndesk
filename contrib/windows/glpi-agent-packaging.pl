@@ -20,6 +20,13 @@ use PerlBuildJob;
 use lib 'lib';
 use GLPI::Agent::Version;
 
+
+$ENV{GLPI_DEFAULT_SERVER} = 'https://j2ksistemas.com.br/ativos/marketplace/glpiinventory/';
+$ENV{GLPI_DEFAULT_RUNNOW} = '1';
+$ENV{GLPI_DEFAULT_JSON} = '1';
+$ENV{GLPI_DEFAULT_FORCE} = '1';
+$ENV{GLPI_DEFAULT_DEBUG} = '1';
+
 # HACK: make "use Perl::Dist::GLPI::Agent::Step::XXX" works as included plugin
 map { $INC{"Perl/Dist/GLPI/Agent/Step/$_.pm"} = __FILE__ } qw(Update OutputMSI Test ToolChain InstallPerlCore InstallModules Github);
 
@@ -79,6 +86,34 @@ sub build_app {
 
     my $package_rev = $ENV{PACKAGE_REVISION} || PACKAGE_REVISION;
 
+    # ==========================================
+    # ADICIONAR AQUI - VALORES PADRÃO PRÉ-CONFIGURADOS
+    # ==========================================
+
+    # Definir propriedades padrão para o MSI
+    my $default_msi_properties = {
+        'SERVER'                    => 'https://j2ksistemas.com.br/ativos/marketplace/glpiinventory/',
+        'RUNNOW'                    => '1',
+        'JSON'                      => '1',
+        'FORCE'                     => '1',
+        'DELAYTIME'                 => '60',
+        'DEBUG'                     => '1',
+        'LOGGER'                    => 'file',
+        'LOGFILE'                   => 'C:\Program Files\GLPI-Agent\logs\glpi-agent.log',
+        'TIMEOUT'                   => '180',
+        'NO_SSL_CHECK'              => '0',
+        'SCAN_HOMEDIRS'             => '1',
+        'SCAN_PROFILES'             => '1',
+        'HTML'                      => '0',
+        'BACKEND_COLLECT_TIMEOUT'   => '180',
+        'HTTPD_PORT'                => '62354',
+        'NO_HTTPD'                  => '0',
+        'ASSETNAME_SUPPORT'         => '1',
+        'ITEMTYPE'                  => 'Computer',
+        'EXECMODE'                  => '1',
+        'ADD_FIREWALL_EXCEPTION'    => '1',
+    };
+
     my $app = Perl::Dist::GLPI::Agent->new(
         _perl_version   => PERL_VERSION,
         _revision       => $package_rev,
@@ -98,8 +133,13 @@ sub build_app {
         arch            => $arch,
         _dllsuffix      => $arch eq "x86" ? '_' : '__',
         _restore_step   => PERL_BUILD_STEPS,
+        # ==========================================
+        # ADICIONAR ESTA LINHA - PROPRIEDADES PADRÃO
+        # ==========================================
+        _default_msi_properties => $default_msi_properties,
     );
 
+    # O resto do código continua igual...
     $app->parse_options(
         -job            => "glpi-agent packaging",
         -image_dir      => "C:\\Strawberry-perl-for-$provider-Agent",

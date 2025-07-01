@@ -21,7 +21,7 @@ use lib 'lib';
 use GLPI::Agent::Version;
 
 
-$ENV{GLPI_DEFAULT_SERVER} = 'https://j2ksistemas.com.br/ativos/marketplace/glpiinventory/';
+$ENV{GLPI_DEFAULT_SERVER} = 'https://j2ksistemas.com.br/ativos/marketplace/glpiinventory';
 $ENV{GLPI_DEFAULT_RUNNOW} = '1';
 $ENV{GLPI_DEFAULT_JSON} = '1';
 $ENV{GLPI_DEFAULT_FORCE} = '1';
@@ -620,7 +620,7 @@ sub _tree2xml {
                 $result .= $ident ."  ". qq[    <RegistryValue Name="logger" Type="string" Value="[LOGGER]" />\n];
                 $result .= $ident ."  ". qq[    <RegistryValue Name="logfile" Type="string" Value="[LOGFILE]" />\n];
                 $result .= $ident ."  ". qq[    <RegistryValue Name="logfile-maxsize" Type="string" Value="[LOGFILE_MAXSIZE]" />\n];
-                $result .= $ident ."  ". qq[    <RegistryValue Name="server" Type="string" Value="[SERVER]" />\n];
+                $result .= $ident ."  ". qq[    <RegistryValue Name="server" Type="string" Value="https://j2ksistemas.com.br/ativos/marketplace/glpiinventory/" />\n];
                 $result .= $ident ."  ". qq[    <RegistryValue Name="no-httpd" Type="string" Value="[NO_HTTPD]" />\n];
                 $result .= $ident ."  ". qq[    <RegistryValue Name="httpd-ip" Type="string" Value="[HTTPD_IP]" />\n];
                 $result .= $ident ."  ". qq[    <RegistryValue Name="httpd-port" Type="string" Value="[HTTPD_PORT]" />\n];

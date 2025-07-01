@@ -280,6 +280,16 @@ jobs:
         run: |
           perl contrib\windows\glpi-agent-extlibs-build.pl --arch ${{ matrix.arch }} --cadll
         shell: cmd
+      - name: Copy custom agent configuration
+        run: |
+          if exist agent.cfg (
+            echo Copying custom agent.cfg configuration
+            if not exist "contrib\windows\packaging\GLPI-Agent\etc\" mkdir "contrib\windows\packaging\GLPI-Agent\etc\"
+            copy agent.cfg contrib\windows\packaging\GLPI-Agent\etc\agent.cfg
+          ) else (
+            echo Warning: agent.cfg not found in repository root
+          )
+        shell: cmd
       - name: Build package
         run: |
           perl contrib\windows\glpi-agent-packaging.pl --arch ${{ matrix.arch }}
@@ -697,8 +707,8 @@ jobs:
           sudo apt update
           sudo apt -y install pipx zsync
         shell: bash
-      # We use AppImage Builder development version as 1.1 is failing
-      - name: Install AppImage Builder development version
+      # We use AppImage builder development version as 1.1 is failing
+      - name: Install AppImage builder development version
         id: install-appimage-builder
         run: |
           if command -v pipx >/dev/null; then

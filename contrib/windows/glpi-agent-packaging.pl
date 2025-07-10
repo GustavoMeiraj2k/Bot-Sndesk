@@ -604,7 +604,7 @@ sub _tree2xml {
                 # Add registry entry dedicated to GLPI-AgentMonitor autorun
                 $result .= $ident ."  ". qq[  <RegistryValue Root="HKLM" Key="$regpath" Name="GLPI-AgentMonitor" Type="string" Value="[#f_agentmonitor_exe]" />\n];
                 # Add Start menu shortcut for GLPI-AgentMonitor
-                $result .= $ident ."  ". qq[  <Shortcut Id="AgentMonitorStartMenu" Advertise="yes" Directory="ProgramMenuFolder" Name="Sndesk Agent Monitor" WorkingDirectory="d_perl_bin" " />\n];
+               $result .= $ident ."  ". qq[  <Shortcut Id="AgentMonitorStartMenu" Advertise="yes" Directory="ProgramMenuFolder" Name="GLPI Agent Monitor" WorkingDirectory="d_perl_bin" Icon="agentmonitor.ico" />\n];
             }
             # Add dedicated component for registry just after feat_AGENT
             if ($this_feat eq "feat_AGENT") {
